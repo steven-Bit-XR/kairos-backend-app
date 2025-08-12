@@ -1,0 +1,17 @@
+from fastapi import FastAPI
+from pydantic import BaseModel
+from random import randint
+
+app = FastAPI()
+
+class Score(BaseModel):
+    fundamental: int
+    technical: int
+
+@app.get("/")
+def read_root():
+    return {"message": "KAIROS backend ready"}
+
+@app.get("/scores", response_model=Score)
+def get_scores():
+    return Score(fundamental=randint(50, 100), technical=randint(50, 100))
