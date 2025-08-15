@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/steven-Bit-XR/kairos-backend-app#readme",
   "dependencies": {
+    "debug": "^4.4.1",
     "express": "^5.1.0"
   }
 }
